@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic workshop website</title>
+    <link="stylesheet" href="desing.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #banner{
+        background-image: linear-gradient(rgba(54, 8, 154, 0.5),#3e5653),url(https://static.vecteezy.com/system/resources/previews/002/478/302/original/sale-electronics-banner-background-free-vector.jpg); 
+           background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        .banner-text
+        {
+            text-align: center;
+            padding-top: 180px;
+            color: white;
+        }
+        .banner-text h1
+        {
+            font-size: 130px;
+            font-style: oblique;
+        }
+        .banner-text p
+        {
+            font-size:40px ;
+            font-style:italic;
+        }
+        .banner-btn
+        {
+            text-align: center;
+            margin: 50px auto 0;
+        }
+        .banner-btn a
+        {
+            width: 200px;
+            text-decoration: none;
+            display: inline;
+            margin: 0 20px;
+            padding: 15px 5;
+            color: white;
+            border: 0.10px solid white;
+        }
+        .banner-btn a:hover
+        {
+            background-color: rgb(58, 56, 56);
+        }
+        #sidenav{
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            right: 0;
+            top: 0;
+            background: #486985;30
+            z-index: 2;
+        }
+        #logo
+        {
+            width: 150px;
+            height: 80px;
+        }
+        nav ul li{
+            list-style: none;
+            margin:50px 20px; 
+            padding: 20px 50px;
+
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+        }
+       #manubtn{
+        width: 50px;
+        height: 50px;
+        background: #009688;
+        text-align: center;
+        position: fixed;
+        top: 20px;
+        right:30px ;
+        border-radius: 3px;
+        z-index: 3;
+        cursor: pointer;
+       }
+       #manubtn img{
+        width: 20px;
+        margin-top:15px ;
+       }
+       /*features*/
+       #feature
+       {
+        width: 100%;
+        padding: 70px 0;
+        text-align: center;
+       }
+       .titletext p{
+        margin: auto;
+        font-size: 20px;
+        color: #009688;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+       }
+       .titletext p::after{
+        content: '';
+        width: 50px;
+        height: 35px;
+        background: linear-gradient(#019587,white);
+        position: absolute;
+        top: -20px;
+        left: 0;
+        z-index: -1;
+        transform: rotate(10deg);
+        border-top-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+       }
+       .titletext h1{
+        font-size: 40px;
+        color: black;
+       }
+       .featurebox
+       {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        align-items: center;
+        text-align: center;
+       }
+       .feature
+       {
+        flex-basis: 50%;
+
+       }
+       #feature
+       {
+        background: linear-gradient(white,#8f8f93);
+       }
+       .feature-img
+       {
+        flex-basis: 50%;
+        margin: auto;
+       }
+       .feature-img img
+       {
+        width: 350px;
+        height: 400px;
+        border-radius: 10px;
+        padding-top: 50px;
+       }
+       .feature h1{
+        text-align: left;
+        margin-bottom: 10px;
+        font-weight: 100;
+        color: #009688;
+       }
+       .featureDs{
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+       }
+    /* service */
+       #service{
+         padding: 70px 0;
+         width: 100%;
+         background:rgb(241, 217, 221);
+         text-align: center;
+       }
+      .servicebox{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: auto;
+      }
+      .singleservice{
+        flex-basis: 48%;
+        text-align: center;
+        border-radius: 70px;
+        margin-bottom: 20px;
+        color:white;
+        position: relative;
+      }
+      .singleservice img {
+        width: 100%;
+        border-radius: 40px;
+      }
+      .overlay
+      {
+        width: 100%;
+        height: 100%;
+        position: absolute; 
+        top: 0;
+        border-radius: 40px;
+        cursor: pointer;
+        background: linear-gradient(rgba(188, 226, 174, 0.5),#afe793);
+        opacity: 0;
+        transition: 1s;
+      }
+      .singleservice:hover .overlay
+      {
+        opacity: 1;
+      }
+      .servicedsr{
+        width: 80%;
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: black;
+        opacity: 1;
+        transition : 1s;
+      }
+      hr{
+        background: white;
+        height: 2px;
+        border: 0;
+        margin: 15px auto;
+        width: 60%;
+       background-color: black;
+      }
+      .servicedsr p{
+        font-size: 15px;
+      }
+      .singleservice:hover.servicedsr{
+        bottom:40%;
+        opacity: 0;
+      }
+      /* testinomial */
+
+      #testimonial
+      {
+        width: 100%;
+        padding: 70px 0;
+        text-align: center;
+      }
+      .testinomialrow
+      {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .testinomialcol
+      {
+        flex-basis: 28%;
+        padding: 10px;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        box-shadow: 0 10px 20px 3px #009881;
+        transition: transform .5s;
+        cursor: pointer;
+      }
+      .user{
+           display: flex;
+           align-items: center;
+           margin: 20px 0;
+
+      }
+      .user img{
+        width: 50px;
+        margin-right: 20px;
+        border-radius: 3px;
+
+      }
+    .userinfo h4 img {
+        width: 15px;
+        margin-right: 20px;
+        border-radius: 3px;
+    }
+    .userinfo small
+    {
+        color:rgb(54, 199, 235);
+    }
+    .testinomialcol:hover
+    {
+        transform: translateY(10px);
+    }
+    /* footer */
+    #footer
+    {
+        width: 100%;
+        padding: 70px 0;
+        text-align: center;
+        background-color: #cbdae7;
+    }
+    .footerrow
+    {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .footerleft,.footerright
+    {
+        flex-basis: 45%;
+        padding: 10px;
+        margin-bottom: 20px;
+
+    }
+    .footerright
+    {
+        text-align: right;
+    }
+    .footerleft
+    {
+        text-align: left;
+    }
+    #social img
+    {
+        width: 300px;
+        height: 150px;
+        align-items: center;
+    }
+    </style>
+    </head>
+    <body>
+        <section id="banner">
+    
+           <img src="https://global-uploads.webflow.com/5e157548d6f7910beea4e2d6/612edb395b802f2ee62dcaf0_logo_b18b180e-229e-43a7-9db4-ccc0e8d19a76.png"  id="logo">
+                <div class="banner-text">
+                <h1>Electronic Shop</h1>
+                <p>Find Your Comfort Devices</p>
+                </div>
+                <div class="banner-btn">
+                    <a href="#">Find Out</a>
+                    <a href="#">Read More</a>
+                </div>
+        </section>
+        <div id="sidenav">
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#feature">FEATURES</a></li>
+                    <li><a href="#service">SERVICES</a></li>
+                    <li><a href="#testimonial">TESTIMONIALS</a></li>
+                    <li><a href="#footer">MEET US</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="manubtn">
+            <img src="https://e7.pngegg.com/pngimages/212/622/png-clipart-hamburger-button-computer-icons-menu-drop-down-list-others-miscellaneous-angle-thumbnail.png" id="menu">
+        </div>
+
+        <script>
+            var manubtn = document.getElementById("manubtn");
+            var sidenav = document.getElementById("sidenav");
+            var manu = document.getElementById("manu");
+            manubtn.onclick=function(){
+                if(sidenav.style.right=="-250px"){
+                    sidenav.style.right="0";
+                }
+                else{
+                    sidenav.style.right="-250px";
+                }
+            }
+        </script>
+        <section id="feature" >
+            <div class="titletext">
+                <p>
+                    FEATURES
+                </p>
+                <h1>Why Choose Us</h1>
+            </div>
+            <div class="featurebox">
+                <div class="feature">
+                    <h1>Experience Staff</h1></br>
+                    <div class="featureDs">
+                        <div class="featureIcon ">
+                        <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/new-product-14-993762.png" width="30px">
+                        </div>
+                        <div class="featureText" style="text-align: initial;padding: 0 20px;">
+                            <p> 
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque corrupti aperiam esse architecto eos! Sunt.
+                            </p>
+                        </div>
+                    </div>
+                    <h1>Pre-Booking Online</h1></br>
+                    <div class="featureDs">
+                        <div class="featureIcon ">
+                        <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/new-product-14-993762.png" width="30px">
+                        </div>
+                        <div class="featureText" style="text-align: initial;padding: 0 20px;">
+                            <p> 
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque corrupti aperiam esse architecto eos! Sunt.
+                            </p>
+                        </div>
+                    </div>
+                    <h1>Affordable Cost</h1></br>
+                    <div class="featureDs">
+                        <div class="featureIcon ">
+                        <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/new-product-14-993762.png" width="30px">
+                        </div>
+                        <div class="featureText" style="text-align: initial;padding: 0 20px;">
+                            <p> 
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque corrupti aperiam esse architecto eos! Sunt.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-img">
+                <img src="https://st3.depositphotos.com/4259987/18518/i/1600/depositphotos_185180632-stock-photo-young-happy-customer-employee-electronics.jpg">
+                </div>
+            </div>
+        </section>
+<!---srevice-->
+<section id="service">
+    <div class="titletext">
+                <p>
+                    PRODUCTS
+                </p>
+                <h1>We Have Top Companies </h1>
+            </div>
+        </br></br>
+        <div class="servicebox">
+            <div class="singleservice">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWV-fXLOF9Y_qiqRwKndR_8DmlrtDdWwhbdA&usqp=CAU">
+                <div class="overlay"></div>
+                <div class="servicedsr">
+                    <h3>APPLE</h3>
+                    <hr>
+                    <!-- <p>Apple ranks number 1 on our list of the top 10 largest electronics companies in the world in 2020 due to its immense revenue and influential status in the electronics industry.</p> -->
+                </div>
+            </div>
+            <div class="singleservice">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtOGatgvh650M9DOIthUeQbbodCGCTVlGeow&usqp=CAU">
+                <div class="overlay"></div>
+                <div class="servicedsr">
+                    <h3>SAMSUNG</h3>
+                    <hr>
+                    <!-- <p>Samsung is also the world�s largest manufacturer of mobile phones and smartphones, known for its flagship Samsung Galaxy product line of smartphones. The company also created the phablet market with its line of Samsung Galaxy note devices.</p> -->
+                </div>
+            </div>
+            <div class="singleservice">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGmh9nMJgpPtaDcYzyyracee4ja_nnWBAS-E2lLPz2S3-EaiC7LD5AxFvvCG4ipNHigmk&usqp=CAU">
+                <div class="overlay"></div>
+                <div class="servicedsr">
+                    <h3>DELL</h3>
+                    <hr>
+                    <!-- <p> Dell is known for a robust electronics product line including personal computers, servers, smartphones, televisions, computer software, computer security, and network security, as well as information security services.</p> -->
+                </div>
+            </div>
+            <div class="singleservice">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWpN9V7s2jx-a6iW0lMzlL7Y8hNd2pcUy9ZQ&usqp=CAU">
+                <div class="overlay"></div>
+                <div class="servicedsr">
+                    <h3>PANASONIC</h3>
+                    <hr>
+                    <!-- <p>Panasonic is a Japanese multinational electronics corporation headquartered in Kadoma, Osaka, Japan, and last year generated revenues of USD 74.73 billion � making Panasonic one of the biggest electronic companies in the world.</p> -->
+                </div>
+            </div>
+        </div>
+</section>
+<!-- testonomial -->
+<section id="testimonial">
+    <div class="titletext">
+        <p>TESTIMONIALS</p>
+        <h1>What Client Says</h1>
+    </div>
+    <br><br>
+    <div class="testinomialrow">
+        <div class="testinomialcol">
+            <div class="user">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRaJ5L6IvslYFf4yLqtLPdLPw5KCj3S1ZioQ&usqp=CAU">
+                <div class="userinfo">
+                    <h4>ARPITA  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrYMUel-c64pEjK5Rq8Gn96ZrqbqRDRtQG1A&usqp=CAU"></h4>
+                    <small>@arpita</small>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, hic asperiores minus a odio dignissimos ut atque voluptates iusto vel, sint nulla eveniet veritatis repellendus fugit quod corporis est nostrum quo fugiat ratione maiores aut et. Similique, quidem veniam sapiente repellendus delectus ipsam natus tempora omnis nisi incidunt quia minima.</p>
+        </div>
+        <div class="testinomialcol">
+            <div class="user">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8f7GY7clKRPhz37g5DXt1eQvobiyaels_I5eqXCAuOYqtY6cmFgG-uLIra6abgYIF2Gw&usqp=CAU">
+                <div class="userinfo">
+                    <h4>SHEFALI <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrYMUel-c64pEjK5Rq8Gn96ZrqbqRDRtQG1A&usqp=CAU"></h4>
+                    <small>@shefali</small>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, hic asperiores minus a odio dignissimos ut atque voluptates iusto vel, sint nulla eveniet veritatis repellendus fugit quod corporis est nostrum quo fugiat ratione maiores aut et. Similique, quidem veniam sapiente repellendus delectus ipsam natus tempora omnis nisi incidunt quia minima.</p>
+        </div>
+        <div class="testinomialcol">
+            <div class="user">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8n8T_If9Xnz4k85_L1w3uxfforalNQDp7Wg&usqp=CAU">
+                <div class="userinfo">
+                    <h4>PRIYANSH<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrYMUel-c64pEjK5Rq8Gn96ZrqbqRDRtQG1A&usqp=CAU"></h4>
+                    <small>@priyansh</small>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, hic asperiores minus a odio dignissimos ut atque voluptates iusto vel, sint nulla eveniet veritatis repellendus fugit quod corporis est nostrum quo fugiat ratione maiores aut et. Similique, quidem veniam sapiente repellendus delectus ipsam natus tempora omnis nisi incidunt quia minima.</p>
+        </div>
+    </div>
+</section>
+<section id="footer">
+    <div class="titletext">
+        <p>
+            CONTACT
+        </p>
+        <h1>Visit Shop Today</h1>
+    </br></br>
+    </div>
+    <div class="footerrow">
+    <div class="footerleft">
+        <h1>Opening Hours</h1></br>
+        <b>
+        <p>Monday To Friday - 9am to 9pm</p>
+        <p>Saturday to Sunday - 8am to 11pm</p>
+    </b>
+    </div>
+    <div class="footerright">
+        <h1>Get In Touch</h1></br>
+        <b>
+        <p>#30 abc colony,xyz city</p>
+        <p>website@gamil.com</p>
+        <p>+91 79897868</p>
+    </b>
+    </div>
+</div>
+<div id="social">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQFZB3FbdSwkac60Eboqgkpz0HcYqbfoWw2Q&usqp=CAU">
+</div>
+</section>
+</body>
+</html># Nehadayma123
